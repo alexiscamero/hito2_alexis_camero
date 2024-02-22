@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="pedidos_trim4_2022.xslt"?>
-<pedidos>
+<pedidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pedidos_trim4_2022.xsd">
     <año year="2021">
         <trimestre num="1">
             <pedido>

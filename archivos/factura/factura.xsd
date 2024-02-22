@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="pedidos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="año" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="año">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="trimestre" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="year" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="trimestre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pedido" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="num" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="apellidos" type="xs:string"/>
+        <xs:element name="telefono" type="xs:string"/>
+        <xs:element ref="direccion"/>
+        <xs:element name="correo" type="xs:string"/>
+        <xs:element name="fecha_inclusion" type="xs:string"/>
+        <xs:element ref="detalle_pedido"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="direccion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="calle" type="xs:string"/>
+        <xs:element name="ciudad" type="xs:string"/>
+        <xs:element name="codigo_postal" type="xs:string"/>
+        <xs:element name="provincia" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="detalle_pedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="numero_pedido" type="xs:string"/>
+        <xs:element name="fecha_compra" type="xs:string"/>
+        <xs:element name="fecha_entrega" type="xs:string"/>
+        <xs:element name="total_factura" type="xs:string"/>
+        <xs:element ref="productos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="productos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="producto" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="producto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="referencia" type="xs:string"/>
+        <xs:element name="precio" type="xs:string"/>
+        <xs:element name="unidades" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
